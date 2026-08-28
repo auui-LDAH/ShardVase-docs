@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShardVase — 反逆向保护 · 离线授权</title>
+<style>
+  :root { --ink:#1c2330; --accent:#7c4dff; --bg:#fafbff; --card:#ffffff; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:"Segoe UI","Microsoft YaHei",sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+  .wrap { max-width:960px; margin:0 auto; padding:48px 24px; }
+  h1 { font-size:2.4rem; letter-spacing:.5px; }
+  h1 small { display:block; font-size:1rem; color:#5a6478; font-weight:400; margin-top:6px; }
+  h2 { margin:40px 0 12px; font-size:1.4rem; }
+  .pill { display:inline-block; background:var(--accent); color:#fff; padding:3px 12px; border-radius:99px; font-size:.8rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:16px; }
+  .card { background:var(--card); border:1px solid #e5e9f2; border-radius:12px; padding:18px 20px; }
+  .card h3 { font-size:1rem; margin-bottom:8px; }
+  .card p { color:#455; font-size:.92rem; }
+  .cta { display:flex; gap:12px; margin:28px 0; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:12px 22px; border-radius:10px; text-decoration:none; font-weight:600; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-ghost { border:1px solid var(--accent); color:var(--accent); }
+  code { background:#eef1f8; padding:2px 6px; border-radius:6px; font-size:.86em; }
+  footer { margin-top:64px; color:#8a93a6; font-size:.82rem; }
+  .brace { background:#eef1f8; border-left:4px solid var(--accent); padding:10px 14px; border-radius:0 10px 10px 0; font-size:.9rem; margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="pill">Windows x64 · C/MSVC · 完全离线 · 零遥测</p>
+  <h1>ShardVase<small>让每一份软件授权都像碎瓷片一样 —— 唯一、不可复制、坏了看得见。</small></h1>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://github.com/auui-LDAH/ShardVase-demo/releases">下载演示包</a>
+    <a class="btn btn-ghost" href="https://github.com/auui-LDAH/ShardVase-docs">能力与边界</a>
+    <a class="btn btn-ghost" href="https://github.com/auui-LDAH/ShardVase-docs/issues/new?template=eval.yml">申请评估授权</a>
+  </div>
+
+  <h2>给你的软件一套可以实证的保护</h2>
+  <div class="grid">
+    <div class="card"><h3>VM 混淆执行</h3><p>自定义字节码引擎，引擎函数运行期原位加解密；跨构建变异，明文窗口=活动周期。</p></div>
+    <div class="card"><h3>多因子反调试</h3><p>PEB/断点/内核/时序/堆标志，干净环境零误报基线。</p></div>
+    <div class="card"><h3>机器绑定授权</h3><p>RSA-3072 签名载荷包含硬件标识：换机必败，篡改必拒，分级+到期签名内置。</p></div>
+    <div class="card"><h3>自持签发体系</h3><p>私钥在你自己服务器；防重放；台账哈希链防静默篡改；完全离线签发。</p></div>
+    <div class="card"><h3>接入有向导</h3><p>prot_sdk：三步把保护装进你的 C 程序，含构建与授权闭环。</p></div>
+    <div class="card"><h3>边界也公开</h3><p>七轮攻防记录 + 诚实边界页：不承诺"永不破解"，但每项主张都有测试依据。</p></div>
+  </div>
+
+  <div class="brace">
+    演示包是一个<strong>被完整保护的真实小工具</strong>（批量 SHA-256 校验），
+    你可以改 license / 换机器 / 换 vm.blob / 调过期时间——全部会被拒绝。<br>
+    下载后跑一遍，比任何截图都有说服力。
+  </div>
+
+  <h2>下一步</h2>
+  <ul style="margin-top:8px; padding-left:20px;">
+    <li><a href="https://github.com/auui-LDAH/ShardVase-demo/releases">下载演示包</a>（7 天评估授权，可续）</li>
+    <li>读完 <a href="https://github.com/auui-LDAH/ShardVase-docs">能力与边界页</a> 再决定</li>
+    <li>想接入自己软件 → GitHub Issue「接入咨询」，或邮件 shardvase@域名</li>
+  </ul>
+
+  <footer>© ShardVase · 品牌占位文案 v0.1 · 边界页与攻防记录均公开，欢迎挑刺。</footer>
+</div>
+</body>
+</html>

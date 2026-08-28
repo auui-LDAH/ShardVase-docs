@@ -1,0 +1,28 @@
+name: 评估授权申请
+description: 演示包到期 / 换机后申请新的评估授权。
+title: "[评估] 申请评估授权"
+labels: [eval]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        1. 在演示目录运行 `python req_gen.py --name 你的称呼`。
+        2. 把生成的 `.req` 文件内容粘贴到下面（machine_id 需与我们核对用的机器绑定一致）。
+        3. 我们签发 14 天评估授权回传（不公开到 Issue，用私信/邮件）。
+  - type: textarea
+    id: req
+    attributes:
+      label: .req 文件内容
+      placeholder: "{ schema:... machine_id_hex:... }"
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式（邮箱或 GitHub 账号，用于回传授权）
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        提示：`.req` 只包含机器码等公开信息，不包含私钥；但仍建议私信发送。

@@ -1,0 +1,40 @@
+name: 接入咨询
+description: 想把自己的 Windows 软件接入 ShardVase 保护？从这里开始。
+title: "[接入] "
+labels: [consult]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        我们会用你的信息给出可行性判断与实施建议。涉及机器码请勿公开在 Issue 里（私信/邮件交流敏感信息）。
+  - type: input
+    id: software
+    attributes:
+      label: 你的软件大概是什么？（行业/形态/是否已有用户）
+      placeholder: 例：行业计价小工具，装机 ~200，已有付费用户
+    validations:
+      required: true
+  - type: dropdown
+    id: concern
+    attributes:
+      label: 最想解决什么？
+      options:
+        - 防破解/防逆向
+        - 授权管理（试用/分级/换机）
+        - 防拷贝/多机共用
+        - 都想要
+    validations:
+      required: true
+  - type: input
+    id: stack
+    attributes:
+      label: 技术栈（语言/是否 x64 Windows/是否可用 MSVC 编译）
+      placeholder: 例：C++ / x64 / 有 VS2022
+  - type: textarea
+    id: other
+    attributes:
+      label: 其他补充（可选）
+  - type: markdown
+    attributes:
+      value: |
+        商业细节（报价/交付方式）在对话中确认，不公开。

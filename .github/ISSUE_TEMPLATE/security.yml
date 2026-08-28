@@ -1,0 +1,31 @@
+name: 安全漏洞/边界报告
+description: 发现演示包或文档边界外的破防手法，欢迎开此单（我们验证并公开更新）。
+title: "[安全] "
+labels: [security]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢提交。处理原则（公开承诺）：
+        - 我们验证为真的 → 记录进边界页与能力页，不删帖；
+        - 涉及真实攻击细节 → 与作者协商披露节奏（防武器化）；
+        - 响应时限：5 个工作日内首次回复。
+  - type: textarea
+    id: what
+    attributes:
+      label: 你做了什么 / 观察到什么
+      placeholder: 步骤、环境（Windows 版本/是否杀软）、预期 vs 实际
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 复现对象与版本
+      placeholder: 例：hashcalc-demo-v1 / 演示包 2026-08 版
+  - type: checkboxes
+    id: share
+    attributes:
+      label: 披露偏好
+      options:
+        - label: 同意 90 天后可公开细节（默认）
+        - label: 希望先私下验证 30 天再决定
