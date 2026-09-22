@@ -57,16 +57,33 @@
 机器绑定: 0x5e6bfd7560985c95  授权: Tier1
   hashcalc.exe:131ef2cb1bb5e53a...</code></pre>
   <p style="margin-top:10px; font-size:.9rem; color:var(--muted);">
-    演示包是一个被完整保护的真实小工具（批量 SHA-256 校验）。请动手试：
+    演示包是一个被完整保护的真实小工具（批量 SHA-256 校验）。
+  </p>
+
+  <p style="margin-top:8px; padding:10px 12px; border-left:3px solid #d9a441; background:rgba(217,164,65,.08); font-size:.9rem;">
+    <strong>⚠️ 先读：演示包需要你申请一次授权才能跑通。</strong><br>
+    包内 <code>license_eval.txt</code> 绑定了<strong>签发机</strong>的机器码且已过期，
+    <strong>在你的机器上首次运行会被拒绝</strong>——这不是包坏了，而是机器绑定
+    <strong>按设计工作</strong>（这正是你要评估的能力之一）。<br>
+    <strong>三步跑通</strong>：运行包内 <code>req_gen.py</code> 生成 <code>.req</code>
+    → <a href="https://github.com/auui-LDAH/ShardVase-docs/issues/new?template=eval.yml">开 Issue 申请</a>
+    → 换回 license 后运行。约 14 天有效。
+  </p>
+
+  <p style="margin-top:10px; font-size:.9rem; color:var(--muted);">
+    <strong>不申请也能验证以下行为</strong>（无需有效授权，均为实测）：
   </p>
   <table>
-    <tr><th>你试一下</th><th>结果</th></tr>
-    <tr><td>改 license 任意一个字符</td><td>license: 0，拒绝运行</td></tr>
-    <tr><td>把授权拷到另一台电脑</td><td>拒绝（绑定在签名载荷里）</td></tr>
+    <tr><th>你试一下</th><th>实测结果</th></tr>
+    <tr><td>直接运行 <code>hashcalc.exe</code>（不带授权）</td><td><code>序列号无效。</code> 拒绝运行</td></tr>
+    <tr><td>改 license 任意一个字符</td><td><code>license: 0</code>，拒绝运行</td></tr>
     <tr><td>换掉 vm.blob（伪造/篡改）</td><td>VM 镜像装载失败</td></tr>
-    <tr><td>系统时间调到过期日之后</td><td>拒绝（评估到期）</td></tr>
     <tr><td>调试器附加</td><td>反调试多维检测</td></tr>
   </table>
+  <p style="margin-top:8px; font-size:.85rem; color:var(--muted);">
+    拿到有效授权后还可验证：把整个包拷到<strong>另一台机器</strong> → 拒绝（机器绑定生效）；
+    把系统时间调到过期日之后 → 拒绝。
+  </p>
 
   <h2>能力速览（每条都有证据）</h2>
   <div class="grid">
@@ -87,7 +104,7 @@
 
   <h2>下一步</h2>
   <ul style="margin-top:8px; padding-left:20px;">
-    <li><a href="https://github.com/auui-LDAH/ShardVase-demo/releases">下载演示包</a>（v1.0.0，7 天评估授权，可续期）</li>
+    <li><a href="https://github.com/auui-LDAH/ShardVase-demo/releases">下载演示包</a>（v1.0.0；<strong>需先申请授权</strong>，申请后 14 天有效 —— 见上方说明）</li>
     <li>读完<a href="https://github.com/auui-LDAH/ShardVase-docs">能力与边界</a>再决定</li>
     <li>想接入自己软件 → <a href="https://github.com/auui-LDAH/ShardVase-docs/issues/new?template=consult.yml">接入咨询 Issue</a></li>
   </ul>
